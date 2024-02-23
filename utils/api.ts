@@ -22,6 +22,7 @@ export class API {
       console.log(`${method} error:`, error)
 
       const { error_code, error_message } = error
+      if (error_code === 420) localStorage.setItem('error', error_message)
 
       if (error_code === 406) {
         switch (error_message) {
